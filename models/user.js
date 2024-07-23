@@ -1,11 +1,14 @@
 import mongoose from 'mongoose';
 
-// Define the user schema
 const userSchema = new mongoose.Schema({
+  googleId: {
+    type: String,
+    required: true,
+    unique: true
+  },
   username: {
     type: String,
     required: true,
-    unique: true,
     trim: true
   },
   email: {
@@ -15,17 +18,12 @@ const userSchema = new mongoose.Schema({
     trim: true,
     lowercase: true
   },
-  password: {
-    type: String,
-    required: true
-  },
   createdAt: {
     type: Date,
     default: Date.now
   }
 });
 
-// Create a model from the schema
 const User = mongoose.model('User', userSchema);
 
 export default User;
