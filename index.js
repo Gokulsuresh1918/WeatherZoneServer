@@ -9,7 +9,7 @@ const mongoURI = 'mongodb+srv://gokulanandhu1571:MUXPFCo4hkBtdc11@weatherzone.rc
 
 mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+  .catch(err => console.error('MongoDB connection error', err));
 
 const app = express();
 
