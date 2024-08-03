@@ -7,6 +7,7 @@ import mongoose from 'mongoose';
 
 const mongoURI = 'mongodb+srv://gokulanandhu1571:MUXPFCo4hkBtdc11@weatherzone.rcrl4db.mongodb.net/'
 
+
 mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error', err));
