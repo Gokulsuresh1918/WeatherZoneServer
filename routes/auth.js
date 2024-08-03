@@ -9,7 +9,7 @@ const router = Router();
 router.get("/login/failed", (req, res) => {
     res.status(401).json({
         error: true,
-        message: 'Log In Failed'
+        message: 'Log In has Failed'
     });
 });
 
