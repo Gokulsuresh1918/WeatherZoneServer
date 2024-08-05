@@ -39,7 +39,7 @@ router.get("/google/callback",
 
             if (user) {
                 // If user exists, redirect to the front-end
-                res.redirect('http://localhost:5173');
+                res.redirect(process.env.REACT_APP_CLIENT_URL);
             } else {
                 // Check if username already exists
                 const existingUserByUsername = await User.findOne({ username: profile.name });
@@ -56,7 +56,7 @@ router.get("/google/callback",
                 });
 
                 await user.save();
-                res.redirect('http://localhost:5173');
+                res.redirect(process.env.REACT_APP_CLIENT_URL);
             }
         } catch (err) {
             console.error('Error during Google authentication:', err);
@@ -76,7 +76,7 @@ router.get("/logout", (req, res) => {
             return res.status(500).json({ error: 'Failed to log out' });
         }
         res.clearCookie('connect.sid'); // Clear session cookie
-        res.redirect('http://localhost:5173/login');
+        res.redirect(process.env.REACT_APP_CLIENT_URL);
     });
 });
 

@@ -7,7 +7,7 @@ import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: `http://localhost:3001/auth/google/callback`, // This should match Google Cloud Console settings
+    callbackURL: `${process.env.REACT_APP_SERVER_URL}/auth/google/callback`, 
     scope: ['profile', 'email']
 },
 function (accessToken, refreshToken, profile, done) {

@@ -15,7 +15,7 @@ mongoose.connect(mongoURI)
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Allow requests from this origin
+    origin: process.env.REACT_APP_CLIENT_URL, // Allow requests from this origin
     methods: 'GET,POST,PUT,DELETE',
     credentials: true
 }));
